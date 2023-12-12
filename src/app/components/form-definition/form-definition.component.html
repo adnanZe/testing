@@ -3,4 +3,9 @@
         <h3>Form Definition</h3>
         <hr>
     </div>
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div cdkDrag *ngFor="let item of items" class="example-box">
+            {{ item }}
+        </div>
+    </div>
 </section>

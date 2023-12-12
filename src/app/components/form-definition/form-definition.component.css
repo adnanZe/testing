@@ -14,3 +14,17 @@ h3 {
   padding-left: 16px;
   font-weight: 500;
 }
+
+.example-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.example-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  background-color: #fff;
+  cursor: move;
+}
