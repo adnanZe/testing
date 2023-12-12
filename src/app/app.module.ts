@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponentsComponent } from './components/list-components/list-components.component';
+import { FormDefinitionComponent } from './components/form-definition/form-definition.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponentsComponent
+    ListComponentsComponent,
+    FormDefinitionComponent
   ],
   imports: [
     BrowserModule,

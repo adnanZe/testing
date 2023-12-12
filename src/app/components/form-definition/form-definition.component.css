@@ -1,7 +1,11 @@
 section {
-  background-color: gainsboro;
   height: 100%;
-  width: 30vw;
+  width: calc(70vw - 1px);
+  border-left: 1px solid black;
+}
+
+.title-component {
+  background-color: gainsboro;
 }
 
 h3 {
