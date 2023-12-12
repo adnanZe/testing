@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { FormItem } from './item-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormBuilderService {
-  private itemsSubject = new BehaviorSubject<string[]>(['Item 1', 'Item 2', 'Item 3', 'Item 4']);
+  private itemsSubject = new BehaviorSubject<FormItem[]>([]);
   items$ = this.itemsSubject.asObservable();
 
   // Add an additional property to store the currently dragged item
