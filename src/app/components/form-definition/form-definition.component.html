@@ -1,7 +1,13 @@
-<section>
+<!-- <section>
     <div class="title-component">
         <h3>Form Definition</h3>
         <hr>
     </div>
 
-</section>
+
+    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+        @for (item of done; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+        }
+    </div>
+</section> -->
