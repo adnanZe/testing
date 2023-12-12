@@ -1,40 +1,46 @@
-<section>
+<section cdkDropListGroup>
     <div>
         <h3>Components</h3>
         <hr>
     </div>
     <div>
         <p>Form component</p>
-        <mat-card cdkDrag>
-            <mat-card-header>
-                <img mat-card-image src="../../../assets/component.svg" alt="Component icon">
-            </mat-card-header>
-            <mat-card-content>
-                <span>Section</span>
-            </mat-card-content>
-        </mat-card>
+        <div cdkDropList (mousedown)="startDrag('section')" (mouseup)="endDrag()">
+            <mat-card cdkDrag>
+                <mat-card-header>
+                    <img mat-card-image src=" ../../../assets/component.svg" alt="Component icon">
+                </mat-card-header>
+                <mat-card-content>
+                    <span>Section</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
     <div>
         <p>Basic Input</p>
-        <mat-card>
-            <mat-card-header>
-                <img mat-card-image src="../../../assets/text-field.svg" alt="Text field icon">
-            </mat-card-header>
-            <mat-card-content>
-                <span>Text Field</span>
-            </mat-card-content>
-        </mat-card>
+        <div cdkDropList (mousedown)="startDrag('text-field')" (mouseup)="endDrag()">
+            <mat-card cdkDrag>
+                <mat-card-header>
+                    <img mat-card-image src=" ../../../assets/text-field.svg" alt="Text field icon">
+                </mat-card-header>
+                <mat-card-content>
+                    <span>Text Field</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 
     <div>
         <p>Selection</p>
-        <mat-card>
-            <mat-card-header>
-                <img mat-card-image src="../../../assets/checkbox.svg" alt="Checkbox icon">
-            </mat-card-header>
-            <mat-card-content>
-                <span>Checkbox</span>
-            </mat-card-content>
-        </mat-card>
+        <div cdkDropList (mousedown)="startDrag('checkbox')" (mouseup)="endDrag()">
+            <mat-card cdkDrag>
+                <mat-card-header>
+                    <img mat-card-image src=" ../../../assets/checkbox.svg" alt="Checkbox icon">
+                </mat-card-header>
+                <mat-card-content>
+                    <span>Checkbox</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </section>
