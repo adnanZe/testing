@@ -10,3 +10,16 @@ h3 {
   padding-left: 16px;
   font-weight: 500;
 }
+
+p {
+  margin: 0;
+  padding-top: 16px;
+  padding-left: 16px;
+  font-weight: 400;
+}
+
+mat-card {
+  max-width: 110px;
+  background-color: white;
+  margin: 16px;
+}

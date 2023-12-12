@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponentsComponent } from './components/list-components/list-components.component';
 import { FormDefinitionComponent } from './components/form-definition/form-definition.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormDefinitionComponent } from './components/form-definition/form-defin
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
