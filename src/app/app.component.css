@@ -45,3 +45,11 @@ img {
   height: 60px;
   object-fit: cover;
 }
+
+.example-box {
+  padding: 16px;
+}
+
+.section-parent {
+  border: 2px solid black;
+}

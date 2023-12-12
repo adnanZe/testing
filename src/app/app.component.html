@@ -7,47 +7,74 @@
         </div>
         <div>
             <p>Form component</p>
-            <!-- <div (mousedown)="startDrag('section')" (mouseup)="endDrag()"> -->
-            <mat-card>
-                <mat-card-header>
-                    <img mat-card-image src=" ../../../assets/component.svg" alt="Component icon">
-                </mat-card-header>
-                <mat-card-content>
-                    <span>Section</span>
-                </mat-card-content>
-            </mat-card>
+            <div cdkDropList [cdkDropListData]="sectionComponent" (cdkDropListDropped)="drop($event)">
+                <mat-card cdkDrag>
+                    <mat-card-header>
+                        <img mat-card-image src=" ../../../assets/component.svg" alt="Component icon">
+                    </mat-card-header>
+                    <mat-card-content>
+                        <span>Section</span>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
-        <!-- </div> -->
         <div>
             <p>Basic Input</p>
-            <mat-card>
-                <mat-card-header>
-                    <img mat-card-image src=" ../../../assets/text-field.svg" alt="Text field icon">
-                </mat-card-header>
-                <mat-card-content>
-                    <span>Text Field</span>
-                </mat-card-content>
-            </mat-card>
+            <div cdkDropList [cdkDropListData]="textComponent" (cdkDropListDropped)="drop($event)">
+                <mat-card cdkDrag>
+                    <mat-card-header>
+                        <img mat-card-image src=" ../../../assets/text-field.svg" alt="Text field icon">
+                    </mat-card-header>
+                    <mat-card-content>
+                        <span>Text Field</span>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
 
         <div>
             <p>Selection</p>
-            <mat-card>
-                <mat-card-header>
-                    <img mat-card-image src=" ../../../assets/checkbox.svg" alt="Checkbox icon">
-                </mat-card-header>
-                <mat-card-content>
-                    <span>Checkbox</span>
-                </mat-card-content>
-            </mat-card>
+            <div cdkDropList [cdkDropListData]="checkboxComponent" (cdkDropListDropped)="drop($event)">
+                <mat-card cdkDrag>
+                    <mat-card-header>
+                        <img mat-card-image src=" ../../../assets/checkbox.svg" alt="Checkbox icon">
+                    </mat-card-header>
+                    <mat-card-content>
+                        <span>Checkbox</span>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </section>
 
     <!-- form builder-->
-    <section class="form-builder">
+    <section class="form-builder" #droppedElements>
         <div class="title-component">
             <h3>Form Definition</h3>
             <hr>
         </div>
+
+        <div class="example-box" *ngFor="let item of test">
+            {{item | json}}
+            <div *ngIf="item.type === 'section'" class="section-parent">
+                <h5>{{item.label}}</h5>
+                <div class="section-child" *ngFor="let child of item.children">
+                    <div *ngIf="child.type === 'text'">
+                        <mat-form-field>
+                            <mat-label>{{child.label}}</mat-label>
+                            <input matInput [disabled]="!child.isVisible" />
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="child.type === 'checkbox'">
+                        <mat-checkbox [disabled]="!child.isVisible">{{child.label}}</mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- json-two-way-binding-preview -->
+    <section class="json-two-way-binding-preview">
+
     </section>
 </main>
